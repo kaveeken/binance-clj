@@ -1,10 +1,4 @@
-(in-ns 'bbb.core)
-; (ns bbb.core
-;   (:require [clj-http.client :as client]
-;             [clojure.string :as str]
-;             [clojure.data.json :as json])
-;   (:import (javax.crypto Mac)
-;            (javax.crypto.spec SecretKeySpec)))
+(in-ns 'binance-clj.core)
 
 
 (defn secretKeyInst [pas mac]

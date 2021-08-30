@@ -1,4 +1,4 @@
-(in-ns 'bbb.core)
+(in-ns 'binance-clj.core)
 
 (def key-pas [(slurp "resources/key") (slurp "resources/pas")])
 (load "crypto")

@@ -1,4 +1,4 @@
-(in-ns 'bbb.core)
+(in-ns 'binance-clj.core)
 
 (defn get-price [symbol]
   (read-string

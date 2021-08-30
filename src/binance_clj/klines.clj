@@ -1,4 +1,4 @@
-(in-ns 'bbb.core)
+(in-ns 'binance-clj.core)
 
 (defn parse-kline
   "Takes a `kline` as received from the REST API and returns it as a keyed map.
