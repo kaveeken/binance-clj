@@ -15,6 +15,7 @@
 (load "pricing")
 (load "klines")
 (load "account")
+(load "market_info")
 (get-price "BTCEUR")
 
 
@@ -39,10 +40,10 @@
 (def lots-completed-price-data
   (map complete-price-data lots-of-empty-price-data))
 
-(map spit-closes lots-completed-price-data) ; spits nils?
+(map spit-closes lots-completed-price-data)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; this should go to other project entirely
 
 (defn root-predict-target
   [position price-old price-new root]
