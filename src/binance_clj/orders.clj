@@ -3,8 +3,6 @@
 (load "crypto")
 (load "pricing")
 
-(def key-pas [(slurp "resources/key") (slurp "resources/pas")])
-
 (defn cancel-orders-symbol
   "Cancel all orders for a specific trading pair (`symbol`)."
   [key-pas symbol]
@@ -67,15 +65,6 @@
        (if (empty? qty-price-rest)
          order-ids
          (recur qty-price-rest order-ids))))))
-
-(post-limit-order key-pas "XMRETH" "BUY" 1 0.05)
-(def gorder (get-orders key-pas))
-(get-orders key-pas)
-(cancel-orders-symbol key-pas "XMRETH")
-
-(def spread '((0.5 0.06) (0.5 0.05)))
-(post-limit-spread key-pas "XMRETH" "BUY" spread)
-
 
 (defn get-single-order
   [key-pas symbol id]
