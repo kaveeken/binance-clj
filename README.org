@@ -1,1 +1,2 @@
 * binance-clj
+[[https://clojars.org/org.clojars.kaveeken/binance-clj/]]
