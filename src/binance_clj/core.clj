@@ -7,14 +7,8 @@
            (javax.crypto.spec SecretKeySpec)))
 
 
-; (def key-pas
-;   "Vector containing API key and passphrase."
-;   [(slurp "resources/key") (slurp "resources/pas")])
-
 (load "crypto")
 (load "pricing")
 (load "klines")
 (load "account")
 (load "market_info")
-
-;(get-price "BTCEUR")

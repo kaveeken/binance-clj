@@ -95,7 +95,7 @@
 (defn spit-closes [price-data]
   (let [selector (fn [kline-map] (:close kline-map))
         closes (vec (map selector (:klines price-data)))
-        path (str "resources/closes/"
+        path (str "things/closes/"
                   (:pair price-data) "-" (:interval price-data))
         spitter (fn [close] (spit path (str close "\n") :append true))]
     (do (println (spit path "")) (map spitter closes))))

@@ -11,8 +11,6 @@
   (let [factor (Math/pow 10 precision)]
     (/ (Math/ceil (* d factor)) factor)))
   
-;(def key-pas [(slurp "resources/key") (slurp "resources/pas")])
-
 (defn get-exchange-info
   [symbol]
   (send-unsigned-request
