@@ -85,12 +85,15 @@
 (defn complete-price-data
   "Iterates a `price-data` map with [[add-to-price-data]]
   such that the data is up to date."
-  [price-data]
-  (let [now (System/currentTimeMillis)]
+  ([price-data]
+   (complete-price-data price-data (long 1e15))) ; the year 33658
+  ([price-data end-time]
+   (let [now (System/currentTimeMillis)]
     (loop [price-data price-data]
-      (if (>= (:next-kline price-data) now)
+      (if (or (>= (:next-kline price-data) now)
+              (>= (:next-kline price-data) end-time))
         price-data
-        (recur (add-to-price-data price-data))))))
+        (recur (add-to-price-data price-data)))))))
 
 (defn spit-closes [price-data]
   (let [selector (fn [kline-map] (:close kline-map))
